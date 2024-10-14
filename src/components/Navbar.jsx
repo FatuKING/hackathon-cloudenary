@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom'
 export function Navbar () {
   return (
     <>
-      <div className='flex flex-col bg-slate-800 h-full'>
-        <ul>
+      <div className='bg-slate-800 h-full w-2/12'>
+        <ul className='flex flex-col p-2 text-xl'>
           <li>
             <NavLink
               to='/'
-              className={({ isActive }) => isActive ? 'bg-blue-900' : 'bg-green-900'}
+              className={({ isActive }) => isActive ? 'text-white' : 'text-green-600'}
             >Fondos escalofriantes
             </NavLink>
           </li>
@@ -16,7 +16,7 @@ export function Navbar () {
           <li>
             <NavLink
               to='/monster'
-              className={({ isActive }) => isActive ? 'bg-blue-900' : 'bg-green-900'}
+              className={({ isActive }) => isActive ? 'text-white' : 'text-green-600'}
             >Agregar Monstruos
             </NavLink>
 
@@ -24,8 +24,8 @@ export function Navbar () {
 
           <li>
             <NavLink
-              to='/'
-              className={({ isActive }) => isActive ? 'bg-blue-900' : 'bg-green-900'}
+              to='/creatercart'
+              className={({ isActive }) => isActive ? 'text-white' : 'text-green-600'}
             > Crear tarjeta de halloween
             </NavLink>
           </li>
