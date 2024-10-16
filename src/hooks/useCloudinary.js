@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 export const useCloudinary = create((set) => ({
-  imgPublicId: '',
+  imgPublicId: 'noimage-removebg-preview_wvj5cs',
   uploadImg: () => {
     const widget = window.cloudinary.createUploadWidget(
       {
@@ -9,7 +9,7 @@ export const useCloudinary = create((set) => ({
         uploadPreset: import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET, // tu preset de carga
         sources: ['local', 'url'],
         multiple: false,
-        cropping: true
+        cropping: false
       },
       (error, result) => {
         if (!error && result && result.event === 'success') {

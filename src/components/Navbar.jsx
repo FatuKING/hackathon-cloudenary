@@ -3,34 +3,34 @@ import { NavLink } from 'react-router-dom'
 export function Navbar () {
   return (
     <>
-      <div className='bg-slate-800 h-full w-2/12'>
-        <ul className='flex flex-col text-xl text-center font-semibold'>
-          <li className='border border-slate-500 p-1'>
+      <aside className='bg-transparent flex items-center h-full w-1/4'>
+        <ul className='flex flex-col text-3xl font-semibold bg-black/50 p-2 rounded'>
+          <li className='p-1'>
             <NavLink
               to='/'
-              className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'}
+              className={({ isActive }) => isActive ? 'text-orange-700' : 'text-white'}
             >Cambiar Fondo
             </NavLink>
           </li>
 
-          <li className='border border-slate-500 p-1'>
+          <li className='p-1'>
             <NavLink
               to='/monster'
-              className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'}
+              className={({ isActive }) => isActive ? 'text-orange-700' : 'text-white'}
             >Agregar Monstruos
             </NavLink>
 
           </li>
 
-          <li className='border border-slate-500 p-1'>
+          <li className='p-1'>
             <NavLink
               to='/creatercart'
-              className={({ isActive }) => isActive ? 'text-blue-500' : 'text-white'}
+              className={({ isActive }) => isActive ? 'text-orange-700' : 'text-white'}
             > Agregar Texto
             </NavLink>
           </li>
         </ul>
-      </div>
+      </aside>
     </>
   )
 }
