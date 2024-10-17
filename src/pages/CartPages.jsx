@@ -2,12 +2,9 @@ import { AdvancedImage, lazyload, placeholder, responsive } from '@cloudinary/re
 import { Navbar } from '../components/Navbar.jsx'
 import { TopBar } from '../components/TopBar.jsx'
 import { useCloudinary } from '../hooks/useCloudinary.js'
-import { Cloudinary } from '@cloudinary/url-gen'
 
 export function CartPages () {
-  const { imgPublicId } = useCloudinary()
-  const cld = new Cloudinary({ cloud: { cloudName: 'michiking' } })
-  const myImage = cld.image(imgPublicId)
+  const { myImage } = useCloudinary()
 
   return (
     <>
@@ -20,7 +17,7 @@ export function CartPages () {
               <AdvancedImage
                 cldImg={myImage}
                 plugins={[lazyload(), placeholder({ mode: 'blur' }), responsive({ steps: 200 })]}
-                className='h-96 w-full border-2 bg-black border-black rounded'
+                className='h-96 w-full border-2 bg-black/50 border-black rounded'
               />
               <div className='flex flex-col gap-4 text-2xl'>
                 <button className='bg-orange-700 p-2 rounded'>Vampiros</button>

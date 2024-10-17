@@ -1,7 +1,12 @@
 import { create } from 'zustand'
+import { CloudinaryImage } from '@cloudinary/url-gen'
+import { generativeBackgroundReplace } from '@cloudinary/url-gen/actions/effect'
+
+let publicId = ''
 
 export const useCloudinary = create((set) => ({
-  imgPublicId: 'noimage-removebg-preview_wvj5cs',
+  myImage: new CloudinaryImage('noimage-removebg-preview_wvj5cs', { cloudName: 'michiking' }),
+  publicImgId: '',
   uploadImg: () => {
     const widget = window.cloudinary.createUploadWidget(
       {
@@ -14,11 +19,31 @@ export const useCloudinary = create((set) => ({
       (error, result) => {
         if (!error && result && result.event === 'success') {
           console.log(result)
-          set((state) => ({ imgPublicId: result.info.public_id }))
+          publicId = result.info.public_id
+          set((state) => ({
+            publicImgId: result.info.public_id,
+            myImage: new CloudinaryImage(publicId, { cloudName: 'michiking' })
+          }))
           console.log('Uploaded image URL: ', result.info.secure_url)
         }
       }
     )
     widget.open()
+  },
+  addBackgroundHell: () => {
+    set((state) => ({
+      myImage: new CloudinaryImage(publicId, { cloudName: 'michiking' }).effect(
+        generativeBackgroundReplace().prompt('Add scary vampire to the background')
+      )
+    })
+    )
+  },
+  addBackground: (prompt) => {
+    set((state) => ({
+      myImage: new CloudinaryImage(publicId, { cloudName: 'michiking' }).effect(
+        generativeBackgroundReplace().prompt(prompt)
+      )
+    })
+    )
   }
 }))
