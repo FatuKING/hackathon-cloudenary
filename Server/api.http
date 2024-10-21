@@ -1,0 +1,5 @@
+### Subir una imgagen
+POST http://localhost:3000/uploadImage
+
+### Descargar una imagen 
+POST http://localhost:3000/downloadImage

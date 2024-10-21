@@ -1,0 +1,26 @@
+{
+  "name": "spookysnap",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "standard": "17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "dependencies": {
+    "cloudinary": "2.5.1",
+    "cors": "2.8.5",
+    "dotenv": "16.4.5",
+    "express": "4.19.2"
+  }
+}
