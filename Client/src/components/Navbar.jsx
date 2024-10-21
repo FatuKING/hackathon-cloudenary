@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { BtnDownload } from './btnDownload.jsx'
 
 export function Navbar () {
   return (
@@ -17,7 +18,7 @@ export function Navbar () {
             <NavLink
               to='/monster'
               className={({ isActive }) => isActive ? 'text-orange-700' : 'text-white'}
-            >Agregar Monstruos
+            >Agregar Disfraz
             </NavLink>
 
           </li>
@@ -28,6 +29,10 @@ export function Navbar () {
               className={({ isActive }) => isActive ? 'text-orange-700' : 'text-white'}
             > Agregar Texto
             </NavLink>
+          </li>
+
+          <li className='p-1'>
+            <BtnDownload />
           </li>
         </ul>
       </aside>

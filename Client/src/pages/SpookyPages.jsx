@@ -2,9 +2,10 @@ import { AdvancedImage, lazyload, responsive, placeholder } from '@cloudinary/re
 import { Navbar } from '../components/Navbar.jsx'
 import { TopBar } from '../components/TopBar.jsx'
 import { useCloudinary } from '../hooks/useCloudinary.js'
+import { Loading } from '../components/Loading.jsx'
 
 export function SpookyPages () {
-  const { myImage, addBackground } = useCloudinary()
+  const { myImage, addBackground, loading } = useCloudinary()
 
   return (
     <>
@@ -57,6 +58,8 @@ export function SpookyPages () {
                 </button>
               </div>
             </section>
+
+            {loading ? <Loading /> : null}
           </article>
         </article>
 
