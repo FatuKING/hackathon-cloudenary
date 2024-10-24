@@ -19,7 +19,7 @@ export function BtnDownload () {
 
   return (
     <>
-      <button className='pt-8 text-left hover:text-orange-700' onClick={() => handleDownload()}>
+      <button className='bg-orange-700 p-2 rounded shadow-md shadow-black' onClick={() => handleDownload()}>
         Descargar
       </button>
     </>

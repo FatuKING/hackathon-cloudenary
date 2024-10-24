@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_ENDPOINT || 'http://localhost:3000/uploadImage'
+const API_URL = import.meta.env.VITE_ENDPOINT
 
 export async function uploadImage (imgURl) {
   try {

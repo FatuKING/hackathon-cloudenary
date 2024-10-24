@@ -1,24 +1,24 @@
 import { NavLink } from 'react-router-dom'
-import { BtnDownload } from './btnDownload.jsx'
 
 export function Navbar () {
   return (
     <>
-      <aside className='bg-transparent flex items-center h-full w-1/4'>
-        <ul className='flex flex-col text-3xl font-semibold bg-black/50 p-2 rounded'>
+      <nav className='bg-transparent flex items-center justify-center w-screen pt-4'>
+
+        <ul className='flex w-11/12 md:w-2/3 justify-between text-xl md:text-2xl lg:text-3xl font-semibold'>
           <li className='p-1'>
             <NavLink
               to='/'
-              className={({ isActive }) => isActive ? 'text-orange-700' : 'text-white'}
-            >Cambiar Fondo
+              className={({ isActive }) => isActive ? 'text-orange-500' : 'text-white'}
+            >Fondos
             </NavLink>
           </li>
 
           <li className='p-1'>
             <NavLink
               to='/monster'
-              className={({ isActive }) => isActive ? 'text-orange-700' : 'text-white'}
-            >Agregar Disfraz
+              className={({ isActive }) => isActive ? 'text-orange-500' : 'text-white'}
+            >Disfrazes
             </NavLink>
 
           </li>
@@ -26,16 +26,13 @@ export function Navbar () {
           <li className='p-1'>
             <NavLink
               to='/creatercart'
-              className={({ isActive }) => isActive ? 'text-orange-700' : 'text-white'}
-            > Agregar Texto
+              className={({ isActive }) => isActive ? 'text-orange-500' : 'text-white'}
+            > Texto
             </NavLink>
           </li>
-
-          <li className='p-1'>
-            <BtnDownload />
-          </li>
         </ul>
-      </aside>
+
+      </nav>
     </>
   )
 }
